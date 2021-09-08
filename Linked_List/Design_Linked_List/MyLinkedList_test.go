@@ -8,7 +8,7 @@ func TestMyLinkedList(t *testing.T) {
 	myLinkedList.AddAtTail(3)
 	myLinkedList.AddAtIndex(1, 2) // linked list becomes 1->2->3
 	val := myLinkedList.Get(1)
-	if myLinkedList.Get(1) != 2 {
+	if val != 2 {
 		t.Error("Test1 expected", 2, "got", val)
 	}
 	myLinkedList.DeleteAtIndex(1) // now the linked list is 1->3
