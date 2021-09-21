@@ -1,7 +1,7 @@
 package main
 
 type MyLinkedList struct {
-	val int
+	val  int
 	next *MyLinkedList
 }
 
@@ -49,8 +49,8 @@ func (head *MyLinkedList) AddAtIndex(index int, val int) {
 	if index == 0 {
 		head.AddAtHead(val)
 	}
-  for j := 0; cur != nil; j++ {
-		if j == index - 1 {
+	for j := 0; cur != nil; j++ {
+		if j == index-1 {
 			cur.next = &MyLinkedList{val: val, next: cur.next}
 			return
 		}
@@ -71,7 +71,7 @@ func (head *MyLinkedList) DeleteAtIndex(index int) {
 	}
 	cur := head
 	for j := 0; cur != nil; j++ {
-		if j == index - 1 && cur.next != nil {
+		if j == index-1 && cur.next != nil {
 			cur.next = cur.next.next
 			return
 		}

@@ -9,7 +9,7 @@ type TreeNode struct {
 func preorderTraversal(root *TreeNode) []int {
 	traversal := make([]int, 0, 1000)
 	if root == nil {
-			return traversal
+		return traversal
 	}
 	node := root
 
@@ -40,9 +40,9 @@ func preorderTraversal(root *TreeNode) []int {
 		if len(breadcrumbs) <= 1 {
 			break
 		}
-		breadcrumbs = breadcrumbs[:len(breadcrumbs) - 1]
+		breadcrumbs = breadcrumbs[:len(breadcrumbs)-1]
 		prev_node = node
-		node = breadcrumbs[len(breadcrumbs) - 1]
+		node = breadcrumbs[len(breadcrumbs)-1]
 		reverse = true
 	}
 	return traversal

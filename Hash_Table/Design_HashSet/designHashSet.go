@@ -1,7 +1,7 @@
 package main
 
 type MyHashSet struct {
-  buckets [1000][]int
+	buckets [1000][]int
 }
 
 func Constructor() MyHashSet {
@@ -22,12 +22,12 @@ func (hs *MyHashSet) Add(key int) {
 	hs.buckets[bucket_index] = append(hs.buckets[bucket_index], key)
 }
 
-func (hs *MyHashSet) Remove(key int)  {
+func (hs *MyHashSet) Remove(key int) {
 	nums := hs.buckets[hs.hashf(key)]
 	for i := 0; i < len(nums); {
 		if nums[i] == key {
-			nums[i] = nums[len(nums) - 1]
-			nums = nums[:len(nums) - 1]
+			nums[i] = nums[len(nums)-1]
+			nums = nums[:len(nums)-1]
 		}
 		if len(nums) > i && nums[i] != key {
 			i++

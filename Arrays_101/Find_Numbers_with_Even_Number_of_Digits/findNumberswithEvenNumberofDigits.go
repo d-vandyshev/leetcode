@@ -1,6 +1,6 @@
 package main
 
-func findNumberswithEvenNumberofDigits(nums []int) int {	
+func findNumberswithEvenNumberofDigits(nums []int) int {
 	numbers_count := 0
 	for _, num := range nums {
 		if num == 0 {
@@ -10,7 +10,7 @@ func findNumberswithEvenNumberofDigits(nums []int) int {
 			numbers_count++
 		}
 	}
-	return numbers_count;
+	return numbers_count
 }
 
 func isEvenDigit(num int) bool {
@@ -19,5 +19,5 @@ func isEvenDigit(num int) bool {
 		num = num / 10
 		count++
 	}
-	return count % 2 == 0
+	return count%2 == 0
 }

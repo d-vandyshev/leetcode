@@ -5,14 +5,14 @@ import (
 )
 
 type testcase struct {
-	Nodes []int
-	Pos int
+	Nodes  []int
+	Pos    int
 	Result bool
 }
 
 var testcases = []testcase{
-	{[]int{3,2,0,-4}, 1, true},
-	{[]int{1,2}, 0, true},
+	{[]int{3, 2, 0, -4}, 1, true},
+	{[]int{1, 2}, 0, true},
 	{[]int{1}, -1, false},
 }
 

@@ -9,31 +9,31 @@ import (
 type testcase struct {
 	MethodNames  []string
 	MethodParams [][]int
-	Returns []string 
+	Returns      []string
 }
 
 var tests = []testcase{
-{	[]string{"MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"},
-	[][]int{{}, {1}, {2}, {1}, {3}, {2}, {2}, {2}, {2}},
-	[]string{"null", "null", "null", "true", "false", "null", "true", "null", "false"}},
+	{[]string{"MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"},
+		[][]int{{}, {1}, {2}, {1}, {3}, {2}, {2}, {2}, {2}},
+		[]string{"null", "null", "null", "true", "false", "null", "true", "null", "false"}},
 }
 
 func stringsIsEqual(a, b []string) bool {
-  if len(a) != len(b) {
-    return false
-  }
-  for i, v := range a {
-    if v != b[i] {
-      return false
-    }
-  }
-  return true
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
 }
 
-func dynamicCallMethod(obj interface{}, fn string, args []interface{}) (res []reflect.Value){
+func dynamicCallMethod(obj interface{}, fn string, args []interface{}) (res []reflect.Value) {
 	var inputs []reflect.Value
 	for _, v := range args {
-			inputs = append(inputs, reflect.ValueOf(v))
+		inputs = append(inputs, reflect.ValueOf(v))
 	}
 	return reflect.ValueOf(obj).MethodByName(fn).Call(inputs)
 }
