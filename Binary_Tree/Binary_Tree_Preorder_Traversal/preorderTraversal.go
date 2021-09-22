@@ -18,7 +18,7 @@ func preorderTraversal(root *TreeNode) []int {
 	var reverse bool
 	reverse = false
 
-	for i := 0; ; i++ {
+	for {
 		if !reverse {
 			breadcrumbs = append(breadcrumbs, node)
 			traversal = append(traversal, node.Val)
